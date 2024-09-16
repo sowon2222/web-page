@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <!-- 페이지 스타일을 정의 -->
+    <style>
+        /* 전체 페이지의 폰트와 중앙 정렬 설정 */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        /* 회원가입 폼 컨테이너 스타일 */
+        .signup-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        /* 회원가입 제목 스타일 */
+        .signup-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        /* 입력 그룹을 감싸는 div 스타일 */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        /* 입력 필드의 라벨 스타일 */
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        /* 입력 필드 스타일 */
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        /* 회원가입 버튼 스타일 */
+        .signup-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* 버튼 호버 시 스타일 변화 */
+        .signup-btn:hover {
+            background-color: #0056b3;
+        }
+        /* 하단에 표시되는 '이미 회원이신가요?' 텍스트 스타일 */
+        .signup-container p {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 회원가입 폼을 담고 있는 컨테이너 -->
+    <div class="signup-container">
+        <h2>회원가입</h2>
+        <!-- 폼 시작, 데이터 전송 방식은 POST, 처리 파일은 signup_process.php -->
+        <form action="signup_process.php" method="post">
+            <!-- 이름 입력 필드 -->
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <!-- 이메일 입력 필드 -->
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <!-- 아이디 입력 필드 -->
+            <div class="form-group">
+                <label for="username">아이디</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <!-- 비밀번호 입력 필드 -->
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <!-- 비밀번호 확인 입력 필드 -->
+            <div class="form-group">
+                <label for="confirm_password">비밀번호 확인</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            <!-- 회원가입 버튼 -->
+            <button type="submit" class="signup-btn">회원가입</button>
+        </form>
+        <!-- 이미 계정이 있으면 로그인 페이지로 이동하는 링크 -->
+        <p>이미 회원이신가요? <a href="login.html">로그인</a></p>
+    </div>
+
+</body>
+</html>
